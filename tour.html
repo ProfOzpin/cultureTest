@@ -1,17 +1,66 @@
 <!DOCTYPE html>
 <html>
-<link rel="manifest" href="tour.json">
+<link rel="stylesheet" href="tour.css">
+
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 
 <body>
-    <iframe src="https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/cultural-text/draft.html"
-        frameborder="0" width="100%" height="432"></iframe>
+    <div class="holder">
+        <div class="menu" id="menu">
+            <p class="menu-text"
+                style="text-align: right; color: red; font-size: 30px; font-family: 'Roboto'; font-weight: bold;"
+                onclick="menu()">X</p>
+            <p class="menu-text" onclick="changeMap(1)">STORIES OF MELACCA</p>
+            <div class="line"></div>
+            <p class="menu-text" onclick="changeMap(2)">ATTRACTIONS IN MELACCA</p>
+            <div class="line"></div>
+            <p class="menu-text" onclick="changeMap(3)">SAMPLE MAP</p>
+            <div class="line"></div>
+            <p class="menu-text" onclick="changeMap(4)">RETURN HOME</p>
+            <div class="line"></div>
+
+        </div>
+        <div class="menu-button" id="menu-button" onclick=" menu()">
+            <img src="./images/menu-icon.svg" alt=""
+                style="width: 90%; height: 90%; object-fit: contain; margin-left: auto; margin-right: auto; display: block; margin-top: 2.2px;">
+        </div>
+        <iframe id="map" src="https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/test/index.html"
+            frameborder="0" width="100%" height="433" id="stories" style="visibility: visible;"></iframe>
+    </div>
+
 </body>
 <script>
     /* you can pass in options here */
     PleaseRotateOptions = {
         forceLandscape: true // if you would prefer to force portrait mode
     };
+
+    function changeMap(map) {
+        if (map == 1) {
+            document.getElementById("map").src = "https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/test/index.html"
+        } else if (map == 2) {
+            document.getElementById("map").src = "https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/cultural-text/index.html"
+        } else {
+            document.getElementById("map").src = "https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/turtles/index.html"
+        }
+        menu();
+    }
+
+
+    function lol() {
+        console.log("lol");
+    }
+
+    function menu() {
+        if ((document.getElementById("menu").style.visibility) == "hidden") {
+            document.getElementById("menu").style.visibility = "visible";
+            document.getElementById("menu-button").style.visibility = "hidden";
+        } else {
+            document.getElementById("menu").style.visibility = "hidden";
+            document.getElementById("menu-button").style.visibility = "visible";
+        };
+    }
 </script>
-<script src="pleaserotate.min.js"></script>
+<script src=" pleaserotate.min.js"></script>
 
 </html>
