@@ -59,3 +59,33 @@ iframe {
     border-radius: 10px;
     visibility: hidden;
 }
+
+.menu-button-animate {
+    animation-duration: 2s;
+    animation-name: menu-button-animate;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.menu-return {
+    animation-duration: 2s;
+    animation-name: menu-return;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes menu-button-animate {
+    100% {
+        top: 120%;
+    }
+}
+
+@keyframes menu-return {
+    0% {
+        top: 120%;
+    }
+
+    100% {
+        top: 88%;
+    }
+}

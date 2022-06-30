@@ -44,7 +44,7 @@
         if (map == 1) {
             document.getElementById("map").src = "https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/test/index.html"
         } else if (map == 2) {
-            document.getElementById("map").src = "https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/cultural-text/index.html"
+            document.getElementById("map").src = "https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/cultural-text/draft.html"
         } else {
             document.getElementById("map").src = "https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/turtles/index.html"
         }
@@ -58,11 +58,14 @@
 
     function menu() {
         if ((document.getElementById("menu").style.visibility) == "hidden") {
+            document.getElementById("menu-button").classList.add('menu-button-animate');
+            document.getElementById("menu-button").classList.remove('menu-return');
             document.getElementById("menu").style.visibility = "visible";
-            document.getElementById("menu-button").style.visibility = "hidden";
         } else {
             document.getElementById("menu").style.visibility = "hidden";
+            document.getElementById("menu-button").classList.remove('menu-button-animate');
             document.getElementById("menu-button").style.visibility = "visible";
+            document.getElementById("menu-button").classList.add('menu-return');
         };
     }
 </script>
