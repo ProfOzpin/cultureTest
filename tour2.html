@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="tour2.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+
+  <body>
+    <div class="holder">
+      <div class="menu" id="menu">
+        <p
+          class="menu-text"
+          style="
+            text-align: right;
+            color: red;
+            font-size: 30px;
+            font-family: 'Roboto';
+            font-weight: bold;
+          "
+          onclick="menu()"
+        >
+          🞭
+        </p>
+        <p class="menu-text" onclick="changeMap(1)">STORIES OF MELACCA</p>
+        <div class="line"></div>
+        <p class="menu-text" onclick="changeMap(2)">ATTRACTIONS IN MELACCA</p>
+        <div class="line"></div>
+        <p class="menu-text" onclick="changeMap(3)">SAMPLE MAP</p>
+        <div class="line"></div>
+        <p class="menu-text" onclick="changeMap(4)">TIKTOK</p>
+        <div class="line"></div>
+        <p class="menu-text" onclick="changeMap(1)">RETURN HOME</p>
+        <div class="line"></div>
+      </div>
+      <div class="menu-button" id="menu-button" onclick=" menu()">
+        <img
+          src="./images/menu-icon.svg"
+          alt=""
+          style="
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-top: 2.2px;
+          "
+        />
+      </div>
+      <iframe
+        id="map"
+        src="https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/test/index.html"
+        frameborder="0"
+        width="100%"
+        height="433"
+        id="stories"
+        style="visibility: visible"
+      ></iframe>
+
+      <div id="vid" class="bigcontainer">
+        <div class="cont1">
+          <div class="tt">
+            <blockquote
+              class="tiktok-embed"
+              cite="https://www.tiktok.com/@meow__cash/video/7094187452415446315"
+              data-video-id="7094187452415446315"
+              style="max-width: 605px; min-width: 325px; border-radius: 6px"
+            >
+              <section>
+                <a
+                  target="_blank"
+                  title="@meow__cash"
+                  href="https://www.tiktok.com/@meow__cash"
+                  >@meow__cash</a
+                >
+                Voice of Cats audition, part 1 (bear🐻version)
+                <a
+                  title="catsoftiktok"
+                  target="_blank"
+                  href="https://www.tiktok.com/tag/catsoftiktok"
+                  >#catsoftiktok</a
+                >
+                <a
+                  title="cutecat"
+                  target="_blank"
+                  href="https://www.tiktok.com/tag/cutecat"
+                  >#cutecat</a
+                >
+                <a
+                  title="catlover"
+                  target="_blank"
+                  href="https://www.tiktok.com/tag/catlover"
+                  >#catlover</a
+                >
+                <a
+                  title="cat"
+                  target="_blank"
+                  href="https://www.tiktok.com/tag/cat"
+                  >#cat</a
+                >
+                <a
+                  target="_blank"
+                  title="♬ 原聲 - Cash"
+                  href="https://www.tiktok.com/music/原聲-7094187161171266350"
+                  >♬ 原聲 - Cash</a
+                >
+              </section>
+            </blockquote>
+            <script async src="https://www.tiktok.com/embed.js"></script>
+          </div>
+        </div>
+        <h2
+          style="
+            position: absolute;
+            right: 31%;
+            top: 20%;
+            color: white;
+            font-family: 'Roboto';
+          "
+        >
+          Other videos of Cash :)
+        </h2>
+        <div class="cont2">
+          <div class="img-row">
+            <img
+              class="small-img"
+              src="./images/cash1.png"
+              style="width: 5rem; height: 5rem"
+            />
+            <img
+              onclick="window.location.href='https://www.tiktok.com/@meow__cash/video/7115741783434202414?is_copy_url=1&is_from_webapp=v1&lang=en'"
+              src="./images/playbtn.png"
+              class="play-btn"
+            />
+            <p style="font-family: 'Roboto'">Cash being cute part1</p>
+          </div>
+          <div class="img-row">
+            <img src="./images/cash2.png" style="width: 5rem; height: 5rem" />
+            <img
+              onclick="window.location.href='https://www.tiktok.com/@meow__cash/video/7115366521660247342?is_copy_url=1&is_from_webapp=v1&lang=en'"
+              src="./images/playbtn.png"
+              class="play-btn"
+            />
+            <p style="font-family: 'Roboto'">Cash being cute part2</p>
+          </div>
+          <div class="img-row">
+            <img src="./images/cash3.png" style="width: 5rem; height: 5rem" />
+            <img
+              onclick="window.location.href='https://www.tiktok.com/@meow__cash/video/7107934405343169834?is_copy_url=1&is_from_webapp=v1&lang=en'"
+              src="./images/playbtn.png"
+              class="play-btn"
+            />
+            <p style="font-family: 'Roboto'">Cash being cute part3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    /* you can pass in options here */
+    PleaseRotateOptions = {
+      forceLandscape: true, // if you would prefer to force portrait mode
+    };
+
+    // Aligns iframe with screen resolution
+
+    document.getElementById("map").width = "100%";
+    document.getElementById("map").height = screen.height;
+
+    function changeMap(map) {
+      if (map == 1) {
+        document.getElementById("vid").style.visibility = "hidden";
+        document.getElementById("map").style.visibility = "visible";
+        document.getElementById("map").src =
+          "https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/test/index.html";
+      } else if (map == 2) {
+        document.getElementById("vid").style.visibility = "hidden";
+        document.getElementById("map").style.visibility = "visible";
+        document.getElementById("map").src =
+          "https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/cultural-text/index.html";
+      } else if (map == 3) {
+        document.getElementById("vid").style.visibility = "hidden";
+        document.getElementById("map").style.visibility = "visible";
+        document.getElementById("map").src =
+          "https://uploads.knightlab.com/storymapjs/900a13cdeeef6f2a3941b863b15d810c/turtles/index.html";
+      } else if (map == 4) {
+        document.getElementById("vid").style.visibility = "visible";
+        document.getElementById("map").style.visibility = "hidden";
+      }
+      menu();
+    }
+
+    function lol() {
+      console.log("lol");
+    }
+
+    function menu() {
+      if (document.getElementById("menu").style.visibility == "hidden") {
+        document.getElementById("menu").style.visibility = "visible";
+        document.getElementById("menu-button").style.visibility = "hidden";
+      } else {
+        document.getElementById("menu").style.visibility = "hidden";
+        document.getElementById("menu-button").style.visibility = "visible";
+      }
+    }
+  </script>
+  <script src=" pleaserotate.min.js"></script>
+</html>
